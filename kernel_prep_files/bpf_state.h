@@ -5,57 +5,43 @@
 #define _TRACE_BPF_STATE_H
 
 #include <linux/tracepoint.h>
+#include <linux/bpf_verifier.h>
 
 TRACE_EVENT(bpf_state,
 
   TP_PROTO(
-    unsigned long long value,
-    unsigned long long mask,
-    signed long long smin,
-    signed long long smax,
-    unsigned long long umin,
-    unsigned long long umax,
-    signed int s32_min,
-    signed int s32_max,
-    unsigned int u32_min,
-    unsigned int u32_max
+    struct bpf_reg_state *regs
   ),
   
-  TP_ARGS(value, mask, smin, smax, umin, umax, s32_min, s32_max, u32_min, u32_max),
+  TP_ARGS(regs),
   
   TP_STRUCT__entry(
-    __field(unsigned long long, value)
-    __field(unsigned long long, mask)
-    __field(signed long long, smin)
-    __field(signed long long, smax)
-    __field(unsigned long long, umin)
-    __field(unsigned long long, umax)
-    __field(signed int, s32_min)
-    __field(signed int, s32_max)
-    __field(unsigned int, u32_min)
-    __field(unsigned int, u32_max)
+    __field_struct(struct bpf_reg_state, reg0)
+    __field_struct(struct bpf_reg_state, reg1)
+    __field_struct(struct bpf_reg_state, reg2)
+    __field_struct(struct bpf_reg_state, reg3)
+    __field_struct(struct bpf_reg_state, reg4)
+    __field_struct(struct bpf_reg_state, reg5)
+    __field_struct(struct bpf_reg_state, reg6)
+    __field_struct(struct bpf_reg_state, reg7)
+    __field_struct(struct bpf_reg_state, reg8)
+    __field_struct(struct bpf_reg_state, reg9)
   ),
   
   TP_fast_assign(
-      __entry->value = value;
-      __entry->mask = mask;
-      __entry->smin = smin;
-      __entry->smax = smax;
-      __entry->umin = umin;
-      __entry->umax = umax;
-      __entry->s32_min = s32_min;
-      __entry->s32_max = s32_max;
-      __entry->u32_min = u32_min;
-      __entry->u32_max = u32_max;
+      __entry->reg0 = regs[0];
+      __entry->reg1 = regs[1];
+      __entry->reg2 = regs[2];
+      __entry->reg3 = regs[3];
+      __entry->reg4 = regs[4];
+      __entry->reg5 = regs[5];
+      __entry->reg6 = regs[6];
+      __entry->reg7 = regs[7];
+      __entry->reg8 = regs[8];
+      __entry->reg9 = regs[9];
   ), 
   
-  TP_printk("OUPUT\nvalue: %llu\nmask: %llu\ns64_min: %lld\ns64_max: %lld\n" \
-            "u64_min: %lluu64_max: %llu\ns32_min: %d\ns32_max: %d\n" \
-            "u32_min: %u\nu32_max: %u\n",
-            __entry->value, __entry->mask, __entry->smin, __entry->smax, 
-            __entry->umin, __entry->umax, __entry->s32_min, __entry->s32_max, 
-            __entry->u32_min, __entry->u32_max
-  )
+  TP_printk("%llu\n" , __entry->reg0.smin_value)
 ); 
 
 #endif

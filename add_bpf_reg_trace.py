@@ -58,21 +58,7 @@ def main():
 
     do_check_end_line = idx
 
-    verifier_source_lines.insert(do_check_end_line,
-                                 """
-    trace_bpf_state(regs[BPF_REG_1].var_off.value,
-                  regs[BPF_REG_1].var_off.mask,
-                  regs[BPF_REG_1].smin_value,
-                  regs[BPF_REG_1].smax_value,
-                  regs[BPF_REG_1].umin_value,
-                  regs[BPF_REG_1].umax_value,
-                  regs[BPF_REG_1].s32_min_value,
-                  regs[BPF_REG_1].s32_max_value,
-                  regs[BPF_REG_1].u32_min_value,
-                  regs[BPF_REG_1].u32_max_value
-    );
-"""
-                                 )
+    verifier_source_lines.insert(do_check_end_line, "trace_bpf_state(regs);\n")
 
     verifier_source.close()
     os.remove(verifier_source_path)
