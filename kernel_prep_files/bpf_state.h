@@ -42,16 +42,16 @@ TRACE_EVENT(bpf_state,
   ), 
   
   TP_printk(
-          "%llu %llu %llu %llu %llu %llu %d %d %u %u" \
-          "%llu %llu %llu %llu %llu %llu %d %d %u %u" \
-          "%llu %llu %llu %llu %llu %llu %d %d %u %u" \
-          "%llu %llu %llu %llu %llu %llu %d %d %u %u" \
-          "%llu %llu %llu %llu %llu %llu %d %d %u %u" \
-          "%llu %llu %llu %llu %llu %llu %d %d %u %u" \
-          "%llu %llu %llu %llu %llu %llu %d %d %u %u" \
-          "%llu %llu %llu %llu %llu %llu %d %d %u %u" \
-          "%llu %llu %llu %llu %llu %llu %d %d %u %u" \
-          "%llu %llu %llu %llu %llu %llu %d %d %u %u\n",
+          "%llu %llu %llu %llu %llu %llu %d %d %u %u " \
+          "%llu %llu %llu %llu %llu %llu %d %d %u %u " \
+          "%llu %llu %llu %llu %llu %llu %d %d %u %u " \
+          "%llu %llu %llu %llu %llu %llu %d %d %u %u " \
+          "%llu %llu %llu %llu %llu %llu %d %d %u %u " \
+          "%llu %llu %llu %llu %llu %llu %d %d %u %u " \
+          "%llu %llu %llu %llu %llu %llu %d %d %u %u " \
+          "%llu %llu %llu %llu %llu %llu %d %d %u %u " \
+          "%llu %llu %llu %llu %llu %llu %d %d %u %u " \
+          "%llu %llu %llu %llu %llu %llu %d %d %u %u",
           __entry->reg0.var_off.value, __entry->reg0.var_off.mask,
           __entry->reg0.smin_value, __entry->reg0.smax_value,
           __entry->reg0.umin_value, __entry->reg0.umax_value,
