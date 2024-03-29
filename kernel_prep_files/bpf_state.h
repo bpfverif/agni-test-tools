@@ -41,7 +41,68 @@ TRACE_EVENT(bpf_state,
       __entry->reg9 = regs[9];
   ), 
   
-  TP_printk("%llu\n" , __entry->reg0.smin_value)
+  TP_printk(
+          "%llu %llu %llu %llu %llu %llu %d %d %u %u" \
+          "%llu %llu %llu %llu %llu %llu %d %d %u %u" \
+          "%llu %llu %llu %llu %llu %llu %d %d %u %u" \
+          "%llu %llu %llu %llu %llu %llu %d %d %u %u" \
+          "%llu %llu %llu %llu %llu %llu %d %d %u %u" \
+          "%llu %llu %llu %llu %llu %llu %d %d %u %u" \
+          "%llu %llu %llu %llu %llu %llu %d %d %u %u" \
+          "%llu %llu %llu %llu %llu %llu %d %d %u %u" \
+          "%llu %llu %llu %llu %llu %llu %d %d %u %u" \
+          "%llu %llu %llu %llu %llu %llu %d %d %u %u\n",
+          __entry->reg0.var_off.value, __entry->reg0.var_off.mask,
+          __entry->reg0.smin_value, __entry->reg0.smax_value,
+          __entry->reg0.umin_value, __entry->reg0.umax_value,
+          __entry->reg0.s32_min_value, __entry->reg0.s32_max_value,
+          __entry->reg0.u32_min_value, __entry->reg0.u32_max_value,
+          __entry->reg1.var_off.value, __entry->reg1.var_off.mask,
+          __entry->reg1.smin_value, __entry->reg1.smax_value,
+          __entry->reg1.umin_value, __entry->reg1.umax_value,
+          __entry->reg1.s32_min_value, __entry->reg1.s32_max_value,
+          __entry->reg1.u32_min_value, __entry->reg1.u32_max_value,
+          __entry->reg2.var_off.value, __entry->reg2.var_off.mask,
+          __entry->reg2.smin_value, __entry->reg2.smax_value,
+          __entry->reg2.umin_value, __entry->reg2.umax_value,
+          __entry->reg2.s32_min_value, __entry->reg2.s32_max_value,
+          __entry->reg2.u32_min_value, __entry->reg2.u32_max_value,
+          __entry->reg3.var_off.value, __entry->reg3.var_off.mask,
+          __entry->reg3.smin_value, __entry->reg3.smax_value,
+          __entry->reg3.umin_value, __entry->reg3.umax_value,
+          __entry->reg3.s32_min_value, __entry->reg3.s32_max_value,
+          __entry->reg3.u32_min_value, __entry->reg3.u32_max_value,
+          __entry->reg4.var_off.value, __entry->reg4.var_off.mask,
+          __entry->reg4.smin_value, __entry->reg4.smax_value,
+          __entry->reg4.umin_value, __entry->reg4.umax_value,
+          __entry->reg4.s32_min_value, __entry->reg4.s32_max_value,
+          __entry->reg4.u32_min_value, __entry->reg4.u32_max_value,
+          __entry->reg5.var_off.value, __entry->reg5.var_off.mask,
+          __entry->reg5.smin_value, __entry->reg5.smax_value,
+          __entry->reg5.umin_value, __entry->reg5.umax_value,
+          __entry->reg5.s32_min_value, __entry->reg5.s32_max_value,
+          __entry->reg5.u32_min_value, __entry->reg5.u32_max_value,
+          __entry->reg6.var_off.value, __entry->reg6.var_off.mask,
+          __entry->reg6.smin_value, __entry->reg6.smax_value,
+          __entry->reg6.umin_value, __entry->reg6.umax_value,
+          __entry->reg6.s32_min_value, __entry->reg6.s32_max_value,
+          __entry->reg6.u32_min_value, __entry->reg6.u32_max_value,
+          __entry->reg7.var_off.value, __entry->reg7.var_off.mask,
+          __entry->reg7.smin_value, __entry->reg7.smax_value,
+          __entry->reg7.umin_value, __entry->reg7.umax_value,
+          __entry->reg7.s32_min_value, __entry->reg7.s32_max_value,
+          __entry->reg7.u32_min_value, __entry->reg7.u32_max_value,
+          __entry->reg8.var_off.value, __entry->reg8.var_off.mask,
+          __entry->reg8.smin_value, __entry->reg8.smax_value,
+          __entry->reg8.umin_value, __entry->reg8.umax_value,
+          __entry->reg8.s32_min_value, __entry->reg8.s32_max_value,
+          __entry->reg8.u32_min_value, __entry->reg8.u32_max_value,
+          __entry->reg9.var_off.value, __entry->reg9.var_off.mask,
+          __entry->reg9.smin_value, __entry->reg9.smax_value,
+          __entry->reg9.umin_value, __entry->reg9.umax_value,
+          __entry->reg9.s32_min_value, __entry->reg9.s32_max_value,
+          __entry->reg9.u32_min_value, __entry->reg9.u32_max_value
+          )
 ); 
 
 #endif
