@@ -1,6 +1,5 @@
 #undef TRACE_SYSTEM
 #define TRACE_SYSTEM bpf_state
-
 #if !defined(_TRACE_BPF_STATE_H) || defined(TRACE_HEADER_MULTI_READ)
 #define _TRACE_BPF_STATE_H
 
@@ -42,16 +41,16 @@ TRACE_EVENT(bpf_state,
   ), 
   
   TP_printk(
-          "%llu %llu %llu %llu %llu %llu %d %d %u %u " \
-          "%llu %llu %llu %llu %llu %llu %d %d %u %u " \
-          "%llu %llu %llu %llu %llu %llu %d %d %u %u " \
-          "%llu %llu %llu %llu %llu %llu %d %d %u %u " \
-          "%llu %llu %llu %llu %llu %llu %d %d %u %u " \
-          "%llu %llu %llu %llu %llu %llu %d %d %u %u " \
-          "%llu %llu %llu %llu %llu %llu %d %d %u %u " \
-          "%llu %llu %llu %llu %llu %llu %d %d %u %u " \
-          "%llu %llu %llu %llu %llu %llu %d %d %u %u " \
-          "%llu %llu %llu %llu %llu %llu %d %d %u %u",
+          "%llu %llu %llu %llu %llu %llu %u %u %u %u " \
+          "%llu %llu %llu %llu %llu %llu %u %u %u %u " \
+          "%llu %llu %llu %llu %llu %llu %u %u %u %u " \
+          "%llu %llu %llu %llu %llu %llu %u %u %u %u " \
+          "%llu %llu %llu %llu %llu %llu %u %u %u %u " \
+          "%llu %llu %llu %llu %llu %llu %u %u %u %u " \
+          "%llu %llu %llu %llu %llu %llu %u %u %u %u " \
+          "%llu %llu %llu %llu %llu %llu %u %u %u %u " \
+          "%llu %llu %llu %llu %llu %llu %u %u %u %u " \
+          "%llu %llu %llu %llu %llu %llu %u %u %u %u",
           __entry->reg0.var_off.value, __entry->reg0.var_off.mask,
           __entry->reg0.smin_value, __entry->reg0.smax_value,
           __entry->reg0.umin_value, __entry->reg0.umax_value,
